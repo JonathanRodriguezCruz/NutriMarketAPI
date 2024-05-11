@@ -23,8 +23,4 @@ public class Trolley {
     private int trolleyId;
     @Column(name = "user_id")
     private int userId;
-    @Column(name = "product_id")
-    private int productId;
-    @Column(name = "product_cant")
-    private int productCant;
 }

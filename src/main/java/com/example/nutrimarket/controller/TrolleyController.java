@@ -1,11 +1,10 @@
 package com.example.nutrimarket.controller;
 
+import com.example.nutrimarket.DTO.TrolleyDTO;
 import com.example.nutrimarket.model.Trolley;
 import com.example.nutrimarket.service.TrolleyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,4 +18,25 @@ public class TrolleyController {
     public List<Trolley> getAllTrolley() {
         return trolleyService.getAllTrolley();
     }
+
+    @GetMapping("/{id}")
+    public Trolley getTrolley(@PathVariable int id) {
+        return trolleyService.getTrolley(id);
+    }
+
+    @PostMapping
+    public Trolley createTrolley(@RequestBody TrolleyDTO trolleyDTO) {
+        return trolleyService.createTrolley(trolleyDTO);
+    }
+
+    @PutMapping("/update/{id}")
+    public Trolley updateTrolley(@PathVariable int id, @RequestBody TrolleyDTO trolleyDTO) {
+        return trolleyService.updateTrolley(id,trolleyDTO);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteTrolley(@PathVariable int id) {
+        trolleyService.deleteTrolleyById(id);
+    }
+
 }
