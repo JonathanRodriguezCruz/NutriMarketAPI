@@ -1,6 +1,5 @@
 package com.example.nutrimarket.repository;
 
-import com.example.nutrimarket.model.Product;
 import com.example.nutrimarket.model.Trolley;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
