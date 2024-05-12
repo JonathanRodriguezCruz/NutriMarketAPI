@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/cliente")
 public class ClientController {
@@ -25,6 +24,16 @@ public class ClientController {
     @GetMapping("/{id}")
     public Client getClient(@PathVariable int id) {
         return clientService.getClient(id);
+    }
+
+    @GetMapping("/email/{email}")
+    public Client getClientByEmail(@PathVariable String email) {
+        return clientService.getClientByEmail(email);
+    }
+
+    @GetMapping("/password/{password}")
+    public Client getClientByEmailPassword(@PathVariable String password) {
+        return clientService.getClientByPassword(password);
     }
 
     @DeleteMapping("/delete/{password}")

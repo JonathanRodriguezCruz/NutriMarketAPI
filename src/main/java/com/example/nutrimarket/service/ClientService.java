@@ -30,6 +30,14 @@ public class ClientService {
         );*/
     }
 
+    public Client getClientByEmail(String email) {
+        return clientRepository.findByUserEmail(email);
+    }
+
+    public Client getClientByPassword(String password) {
+        return clientRepository.findByUserPassword(password);
+    }
+
     public Client createClient(ClientDTO clientDTO) {
         Client client = new Client();
 
