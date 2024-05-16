@@ -8,11 +8,12 @@ import java.util.List;
 
 @Repository
 public interface TrolleyRepository extends JpaRepository<Trolley, Integer> {
-    List<Trolley> findAll();
-
     Trolley findByTrolleyId(int id);
 
-    Trolley save(Trolley trolley);
+    Trolley findByUserId(int id);
 
     void deleteById(int id);
+
+    @SuppressWarnings({"null", "unchaked"})
+    Trolley save(Trolley trolley);
 }

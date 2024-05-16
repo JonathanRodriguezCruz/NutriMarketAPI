@@ -9,8 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-    List<Product> findAll();
-
+    @SuppressWarnings({"null"})
     Product findByProductId(int id);
 
     List<Product> findByProductCategory(String category);
@@ -19,5 +18,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     void deleteByProductId(int id);
 
+    @SuppressWarnings({"null", "unchaked"})
     Product save(Product product);
 }

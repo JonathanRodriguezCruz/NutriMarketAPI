@@ -4,6 +4,7 @@ import com.example.nutrimarket.DTO.ProductDTO;
 import com.example.nutrimarket.model.Product;
 import com.example.nutrimarket.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,23 +16,23 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAll();
+    public ResponseEntity<List<Product>> getAllProducts() {
+        return ResponseEntity.ok().body(productService.getAllProducts());
     }
 
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable int id) {
-        return productService.getProductById(id);
+    public ResponseEntity<Product> getProductById(@PathVariable int id) {
+        return ResponseEntity.ok().body(productService.getProductById(id));
     }
 
-    @GetMapping("/category/{category}")
-    public List<Product> getProductByCategory(@PathVariable String category) {
-        return productService.getProductByCategory(category);
+    @GetMapping("/{category}")
+    public ResponseEntity<List<Product>> getProductByCategory(@PathVariable String category) {
+        return ResponseEntity.ok().body(productService.getProductByCategory(category));
     }
 
-    @GetMapping("/name/{name}")
-    public List<Product> getProductByName(@PathVariable String name) {
-        return productService.getProductByName(name);
+    @GetMapping("/{name}")
+    public ResponseEntity<List<Product>> getProductByName(@PathVariable String name) {
+        return ResponseEntity.ok().body(productService.getProductByName(name));
     }
 
     @DeleteMapping("/delete/{id}")
@@ -40,12 +41,12 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product createProduct(@RequestBody ProductDTO productDTO) {
-        return productService.createProduct(productDTO);
+    public ResponseEntity<Product> createProduct(@RequestBody ProductDTO productDTO) {
+        return ResponseEntity.ok().body(productService.createProduct(productDTO));
     }
 
     @PutMapping("/update/{id}")
-    public Product updateProduct(@PathVariable int id, @RequestBody ProductDTO productDTO) {
-        return productService.updateProduct(id, productDTO);
+    public ResponseEntity<Product> updateProduct(@PathVariable int id, @RequestBody ProductDTO productDTO) {
+        return ResponseEntity.ok().body(productService.updateProduct(id, productDTO));
     }
 }

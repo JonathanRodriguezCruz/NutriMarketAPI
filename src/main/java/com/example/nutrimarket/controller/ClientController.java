@@ -22,23 +22,28 @@ public class ClientController {
     }
 
     @GetMapping("/{id}")
-    public Client getClient(@PathVariable int id) {
+    public Client getClientById(@PathVariable int id) {
         return clientService.getClient(id);
     }
 
-    @GetMapping("/email/{email}")
-    public Client getClientByEmail(@PathVariable String email) {
-        return clientService.getClientByEmail(email);
+    @GetMapping("/rol")
+    public Client getClientByRol(@RequestParam(name = "rol", defaultValue = "cliente") String rol) {
+        return clientService.getClientByRol(rol);
     }
 
-    @GetMapping("/password/{password}")
-    public Client getClientByEmailPassword(@PathVariable String password) {
-        return clientService.getClientByPassword(password);
+    @GetMapping("/email-password")
+    public Client getClientByEmailPassword(@RequestParam(name = "userEmail")String email, @RequestParam(name = "userPassword")String password) {
+        return clientService.getClientByEmailPassword(email, password);
     }
 
     @DeleteMapping("/delete/{password}")
     public void deleteClient(@PathVariable String password) {
-        clientService.deleteClient(password);
+        clientService.deleteClientByPassword(password);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public void deleteClient(@PathVariable int id) {
+        clientService.deleteClientById(id);
     }
 
     @PostMapping
@@ -47,7 +52,7 @@ public class ClientController {
     }
 
     @PutMapping("/update/{id}")
-    public void updateClient(@PathVariable int id, @RequestBody ClientDTO clientDTO) {
-        clientService.updateClient(id,clientDTO);
+    public Client updateClient(@PathVariable int id, @RequestBody ClientDTO clientDTO) {
+        return clientService.updateClient(id,clientDTO);
     }
 }

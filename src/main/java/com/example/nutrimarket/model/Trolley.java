@@ -10,6 +10,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -19,8 +21,12 @@ import lombok.Setter;
 @Table(name = "carrito_personal")
 public class Trolley {
     @Id
-    @Column(name = "trolley_id", unique = true, updatable = false)
+    @Column(name = "carrito_id")
     private int trolleyId;
     @Column(name = "user_id")
     private int userId;
+    @Column(name = "contenido_carrito")
+    private List<Product> productsList;
+    @Column(name = "precio_total")
+    private double finalPrice;
 }

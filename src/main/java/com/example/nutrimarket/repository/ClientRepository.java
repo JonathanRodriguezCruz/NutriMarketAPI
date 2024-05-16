@@ -13,11 +13,13 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
 
     Client findByUserId(int id);
 
-    Client findByUserEmail(String email);
+    Client findByUserRol(String rol);
 
-    Client findByUserPassword(String password);
+    Client findByUserEmailAndUserPassword(String email, String password);
 
     void deleteByUserPassword(String pasword);
+
+    void deleteByUserId(int id);
 
     @SuppressWarnings({"null", "unchaked"})
     Client save(Client client);

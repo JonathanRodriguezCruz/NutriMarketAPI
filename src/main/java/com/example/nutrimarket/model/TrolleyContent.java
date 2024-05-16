@@ -23,8 +23,6 @@ public class TrolleyContent {
     private int id;
     @Column(name = "carrito_id")
     private int carritoId;
-    @Column(name = "user_id")
-    private int userId;
     @Column(name = "product_id")
     private int productId;
     @Column(name = "product_cant")

@@ -7,6 +7,7 @@ public class ClientDTO {
     private String userName;
     private String userPassword;
     private String userEmail;
-    private String userDirect;
-    private boolean userState;
+    private String userAddress;
+    private String userRol;
+    private String userPhotoUrl;
 }

@@ -16,19 +16,21 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-@Table(name = "clientes")
+@Table(name = "usuarios")
 public class Client {
     @Id
     @Column(name = "user_id", unique = true, updatable = false)
     private int userId;
     @Column(name = "user_name")
     private String userName;
-    @Column(name = "user_password")
-    private String userPassword;
     @Column(name = "user_email")
     private String userEmail;
-    @Column(name = "user_direct")
-    private String userDirect;
-    @Column(name = "user_state")
-    private boolean userState;
+    @Column(name = "user_password")
+    private String userPassword;
+    @Column(name = "user_address")
+    private String userAddress;
+    @Column(name = "user_rol")
+    private String userRol;
+    @Column(name = "user_photo_url")
+    private String userPhotoUrl;
 }

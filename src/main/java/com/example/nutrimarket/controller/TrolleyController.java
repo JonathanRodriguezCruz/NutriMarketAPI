@@ -20,8 +20,13 @@ public class TrolleyController {
     }
 
     @GetMapping("/{id}")
-    public Trolley getTrolley(@PathVariable int id) {
-        return trolleyService.getTrolley(id);
+    public Trolley getTrolleyById(@PathVariable int id) {
+        return trolleyService.getTrolleyById(id);
+    }
+
+    @GetMapping("/user/{id}")
+    public Trolley getTrolleyByUserId(@PathVariable int id) {
+        return trolleyService.getTrolleyByUserId(id);
     }
 
     @PostMapping
