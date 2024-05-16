@@ -25,8 +25,6 @@ public class Trolley {
     private int trolleyId;
     @Column(name = "user_id")
     private int userId;
-    @Column(name = "contenido_carrito")
-    private List<Product> productsList;
     @Column(name = "precio_total")
     private double finalPrice;
 }

@@ -32,7 +32,7 @@ public class TrolleyContentService {
     }
 
     public List<Integer> getAllProductsOfTrolley(int trolleyId) {
-        return trolleyContentRepository.findAllProductIdByTrolleyId(trolleyId);
+        return trolleyContentRepository.findProductIdByCarritoId(trolleyId);
     }
 
     /**
