@@ -16,4 +16,3 @@ public class Ticket {
     private String details;
     private double amount;
 }
-

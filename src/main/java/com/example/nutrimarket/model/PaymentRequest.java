@@ -18,4 +18,3 @@ public class PaymentRequest {
     private String cvv;
     private double amount;
 }
-

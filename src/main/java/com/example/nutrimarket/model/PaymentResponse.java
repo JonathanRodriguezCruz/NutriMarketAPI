@@ -16,4 +16,3 @@ public class PaymentResponse {
     private String message;
     private Ticket ticket;
 }
-
