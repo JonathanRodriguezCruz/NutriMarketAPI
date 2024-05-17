@@ -31,9 +31,13 @@ public class ClientController {
         return clientService.getClientByRol(rol);
     }
 
-    @GetMapping("/email-password")
-    public Client getClientByEmailPassword(@RequestParam(name = "userEmail")String email, @RequestParam(name = "userPassword")String password) {
-        return clientService.getClientByEmailPassword(email, password);
+    @GetMapping("/login")
+    public ResponseEntity<Client> loginUser(@RequestParam(name = "userEmail")String email,
+                        @RequestParam(name = "userPassword")String password) {
+        Client user = clientService.validLogIn(email, password);
+        return (user != null) ?
+                ResponseEntity.ok().body(user) :
+                ResponseEntity.status(404).body(user);
     }
 
     @DeleteMapping("/delete/{password}")
@@ -42,13 +46,18 @@ public class ClientController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteClient(@PathVariable int id) {
-        clientService.deleteClientById(id);
+    public String deleteClient(@PathVariable int id) {
+        return clientService.deleteClientById(id);
     }
 
     @PostMapping
     public ResponseEntity<Client> createClient(@RequestBody ClientDTO clientDTO) {
-        return ResponseEntity.created(URI.create("/cliente/user_id")).body(clientService.createClient(clientDTO));
+        return ResponseEntity.created(null).body(clientService.createClient(clientDTO));
+    }
+
+    @PostMapping("/signup")
+    public ResponseEntity<Client> signupUser(@RequestBody ClientDTO clientDTO) {
+        return ResponseEntity.created(null).body(clientService.createClient(clientDTO));
     }
 
     @PutMapping("/update/{id}")

@@ -43,14 +43,18 @@ public class ClientService {
     }
 
     /**
-     * Muestra un cliente especificando su 'email' y su 'password'
+     * Comprueba si existe un usuarui dado su 'email' y su 'password'
      *
      * @param email     Email del usuario.
      * @param password  Contraseña del usuario.
      * @return
      */
-    public Client getClientByEmailPassword(String email, String password) {
-        return clientRepository.findByUserEmailAndUserPassword(email, password);
+    public Client validLogIn(String email, String password) {
+        Client user = clientRepository.findByUserEmailAndUserPassword(email, password);
+        if (user != null) {
+            return user;
+        }
+        return null;
     }
 
     /**
@@ -62,8 +66,9 @@ public class ClientService {
         clientRepository.deleteByUserPassword(password);
     }
 
-    public void deleteClientById(int id) {
-        clientRepository.deleteByUserId(id);
+    public String deleteClientById(int id) {
+        String userId = String.valueOf(clientRepository.deleteByUserId(id));
+        return "Se elimino correctamente el cliente con ID: { " + userId + " }";
     }
 
     /**
@@ -77,13 +82,17 @@ public class ClientService {
         Client client = new Client();
 
         if (clientDTO != null) {
-            client.setUserEmail(clientDTO.getUserEmail());
-            client.setUserPassword(clientDTO.getUserPassword());
-            client.setUserName(clientDTO.getUserName());
-            client.setUserAddress(clientDTO.getUserAddress());
-        }
+            if (!(clientDTO.getUserName().equals("") && clientDTO.getUserEmail().equals("") &&
+                    clientDTO.getUserPassword().equals(""))) {
+                client.setUserEmail(clientDTO.getUserEmail());
+                client.setUserPassword(clientDTO.getUserPassword());
+                client.setUserName(clientDTO.getUserName());
+                client.setUserAddress(clientDTO.getUserAddress());
 
-        return clientRepository.save(client);
+                return clientRepository.save(client);
+            }
+        }
+        return null;
     }
 
     /**
@@ -98,11 +107,15 @@ public class ClientService {
         Client client = clientRepository.findByUserId(id);
 
         if (clientDTO != null) {
-            client.setUserName(clientDTO.getUserName());
-            client.setUserPassword(clientDTO.getUserPassword());
-            client.setUserEmail(clientDTO.getUserEmail());
-            client.setUserAddress(clientDTO.getUserAddress());
+            if (!(clientDTO.getUserEmail().equals("") && clientDTO.getUserPassword().equals(""))) {
+                client.setUserName(clientDTO.getUserName());
+                client.setUserPassword(clientDTO.getUserPassword());
+                client.setUserEmail(clientDTO.getUserEmail());
+                client.setUserAddress(clientDTO.getUserAddress());
+
+                return clientRepository.save(client);
+            }
         }
-        return clientRepository.save(client);
+        return null;
     }
 }

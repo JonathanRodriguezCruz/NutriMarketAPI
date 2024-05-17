@@ -20,17 +20,23 @@ public class TrolleyContentService {
     TrolleyContentRepository trolleyContentRepository;
 
     /**
-     * Muestra el contenido de un carrito dado su 'id'.
+     * Muestra el contenido de un carrito dado su 'ID'.
      *
-     * @param id    Id del carrito.
+     * @param id    ID del carrito.
      *
      * @return  Lista del contenido del carrito.
      */
-    /* [fix] */
     public TrolleyContent getTrolleyById(int id) {
         return trolleyContentRepository.findByCarritoId(id);
     }
 
+    /**
+     * Muestra todos los productos que contiene un carrito
+     *
+     * @param trolleyId ID del carrito
+     *
+     * @return Lista de los ID's de los productos
+     */
     public List<Integer> getAllProductsOfTrolley(int trolleyId) {
         return trolleyContentRepository.findProductIdByCarritoId(trolleyId);
     }
@@ -57,29 +63,31 @@ public class TrolleyContentService {
     /**
      * Elimina un producto contrceto de un carrito concreto.
      *
-     * @param idProduct Id del prodycto.
-     * @param idTrolley Id del carrito.
+     * @param idProduct ID del prodycto.
+     * @param idTrolley ID del carrito.
      */
-    public void deleteProduct(int idProduct, int idTrolley) {
-        trolleyContentRepository.deleteByProductIdAndCarritoId(idProduct, idTrolley);
+    public String deleteProduct(int idProduct, int idTrolley) {
+        if (trolleyContentRepository.deleteByProductIdAndCarritoId(idProduct, idTrolley)) {
+            return "Se elimino el producto del carrito.";
+        }
+        return "No se puede eliminar el producto";
     }
 
     /**
      * Modifica la cantidad de un producto en concreto.
      *
-     * @param id                Id del carrito.
-     * @param trolleyContentDTO Objeto que contiene todos lo datos modificados.
+     * @param id    ID del carrito.
+     * @param cant  Cantidad deseada del producto.
      *
-     * @return  Contenido del carrito modificado.
+     * @return  Cantidad del contenido modificado.
      */
-    public TrolleyContent updateTrolleyContentCant(int id, TrolleyContentDTO trolleyContentDTO) {
+    public TrolleyContent updateQuantityProduct(int id, int cant) {
         TrolleyContent trolleyContent = getTrolleyById(id);
 
-        if (trolleyContentDTO.getProductCant() > 0) {
-            trolleyContent.setProductCant(trolleyContentDTO.getProductCant());
+        if (cant > 0) {
+            trolleyContent.setProductCant(cant);
         }
 
         return trolleyContentRepository.save(trolleyContent);
     }
-
 }

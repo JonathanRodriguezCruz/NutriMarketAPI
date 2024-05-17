@@ -13,7 +13,7 @@ public interface TrolleyContentRepository extends JpaRepository<TrolleyContent, 
 
     List<Integer> findProductIdByCarritoId(int trolleyId);
 
-    void deleteByProductIdAndCarritoId(int idProduct, int idTrolley);
+    boolean deleteByProductIdAndCarritoId(int idProduct, int idTrolley);
 
     @SuppressWarnings({"null", "unchaked"})
     TrolleyContent save(TrolleyContent trolleyContent);

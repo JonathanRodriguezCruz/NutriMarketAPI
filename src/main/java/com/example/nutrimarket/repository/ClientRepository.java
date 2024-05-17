@@ -19,7 +19,7 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
 
     void deleteByUserPassword(String pasword);
 
-    void deleteByUserId(int id);
+    int deleteByUserId(int id);
 
     @SuppressWarnings({"null", "unchaked"})
     Client save(Client client);

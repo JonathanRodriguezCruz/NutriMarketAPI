@@ -43,6 +43,12 @@ public class TrolleyService {
         return trolleyRepository.findByUserId(id);
     }
 
+    /*
+    public double getTotalPrice(int id) {
+        return trolleyRepository.calculateTotalPriceOfTrolley(id);
+    }
+    */
+
     /**
      * Eliminación de un carrito dado su 'id'.
      *

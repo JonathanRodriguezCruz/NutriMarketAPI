@@ -15,19 +15,21 @@ public class TrolleyController {
     TrolleyService trolleyService;
 
     @GetMapping
-    public List<Trolley> getAllTrolley() {
+    public List<Trolley> getTrolleys() {
         return trolleyService.getAllTrolley();
-    }
-
-    @GetMapping("/{id}")
-    public Trolley getTrolleyById(@PathVariable int id) {
-        return trolleyService.getTrolleyById(id);
     }
 
     @GetMapping("/user/{id}")
     public Trolley getTrolleyByUserId(@PathVariable int id) {
         return trolleyService.getTrolleyByUserId(id);
     }
+
+    /*
+    @GetMapping("/total_price/{id}")
+    public double getTotalPrice(@PathVariable int id) {
+        return trolleyService.getTotalPrice(id);
+    }
+     */
 
     @PostMapping
     public Trolley createTrolley(@RequestBody TrolleyDTO trolleyDTO) {

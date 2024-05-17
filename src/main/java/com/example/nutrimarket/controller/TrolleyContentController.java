@@ -15,22 +15,22 @@ public class TrolleyContentController {
     TrolleyContentService trolleyContentService;
 
     @GetMapping("/{id}")
-    public List<Integer> getAllProductsOfTrolley(@PathVariable int id) {
+    public List<Integer> getProductsByTrolleyId(@PathVariable int id) {
         return trolleyContentService.getAllProductsOfTrolley(id);
     }
 
     @DeleteMapping("/delete/productId-trolleyId")
-    public void deleteProductOfTrolley(@RequestParam("productId") int idProduct, @RequestParam("trolleyId") int idTrolley) {
-        trolleyContentService.deleteProduct(idProduct, idTrolley);
+    public String deleteProductOfTrolley(@RequestParam("productId") int idProduct, @RequestParam("trolleyId") int idTrolley) {
+        return trolleyContentService.deleteProduct(idProduct, idTrolley);
     }
 
     @PostMapping
-    public TrolleyContent addProductTrolley(@RequestBody TrolleyContentDTO trolleyContentDTO) {
+    public TrolleyContent addProductToTrolley(@RequestBody TrolleyContentDTO trolleyContentDTO) {
         return trolleyContentService.addProduct(trolleyContentDTO);
     }
 
-    @PutMapping("/update/{id}")
-    public TrolleyContent updateProductOfTrolley(@PathVariable int id, @RequestBody TrolleyContentDTO trolleyContentDTO) {
-        return trolleyContentService.updateTrolleyContentCant(id, trolleyContentDTO);
+    @PutMapping("/id-cantidad")
+    public TrolleyContent updateQuantityProductOfTrolley(@RequestParam("trolleyId") int id, @RequestParam("productQuantity") int quantity) {
+        return trolleyContentService.updateQuantityProduct(id, quantity);
     }
 }
