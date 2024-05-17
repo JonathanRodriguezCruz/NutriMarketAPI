@@ -9,5 +9,4 @@ public class NutrimarketApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(NutrimarketApplication.class, args);
 	}
-
 }

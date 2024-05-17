@@ -10,21 +10,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-@Table(name = "carrito_personal")
-public class Trolley {
+@Table(name = "contenido_carrito")
+public class TrolleyContent {
     @Id
+    @Column(name = "id", unique = true, updatable = false)
+    private int id;
     @Column(name = "carrito_id")
-    private int trolleyId;
-    @Column(name = "user_id")
-    private int userId;
-    @Column(name = "precio_total")
-    private double finalPrice;
+    private int carritoId;
+    @Column(name = "product_id")
+    private int productId;
+    @Column(name = "product_cant")
+    private int productCant;
 }
