@@ -13,7 +13,7 @@ public interface ClientRepository extends JpaRepository<Client, Integer> {
 
     Client findByUserId(int id);
 
-    Client findByUserRol(String rol);
+    List<Client> findByUserRol(String rol);
 
     Client findByUserEmailAndUserPassword(String email, String password);
 

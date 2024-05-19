@@ -27,7 +27,7 @@ public class ClientController {
     }
 
     @GetMapping("/rol")
-    public Client getClientByRol(@RequestParam(name = "rol", defaultValue = "cliente") String rol) {
+    public List<Client> getClientByRol(@RequestParam(name = "rol", defaultValue = "cliente") String rol) {
         return clientService.getClientByRol(rol);
     }
 
