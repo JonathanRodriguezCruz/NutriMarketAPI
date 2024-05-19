@@ -32,3 +32,6 @@ server:
     path: /user/error
     whitelabel:
       enabled: false
+springdoc:
+  swagger-ui:
+    operationsSorter: method
