@@ -38,7 +38,7 @@ public class ClientService {
         return clientRepository.findByUserId(id);
     }
 
-    public Client getClientByRol(String rol) {
+    public List<Client> getClientByRol(String rol) {
         return clientRepository.findByUserRol(rol);
     }
 
