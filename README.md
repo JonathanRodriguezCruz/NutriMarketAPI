@@ -13,14 +13,14 @@
     <ul>
         <li><strong>Clientes:</strong>
             <ul>
-                <li>Crear, leer, actualizar y eliminar información de clientes.</li>
-                <li>Autenticación y autorización de clientes.</li>
+                <li>Crear, buscar, actualizar y eliminar a clientes.</li>
+                <li>Autenticación de clientes.</li>
             </ul>
         </li>
         <li><strong>Productos:</strong>
             <ul>
                 <li>Consultar y gestionar productos disponibles.</li>
-                <li>Crear, leer, actualizar y eliminar productos.</li>
+                <li>Crear, buscar, actualizar y eliminar productos.</li>
             </ul>
         </li>
         <li><strong>Carritos Personales:</strong>
@@ -40,24 +40,56 @@
     <p>Sigue estos pasos para instalar y ejecutar la API en tu entorno local.</p>
     <h3>Prerrequisitos</h3>
     <ul>
-        <li>JDK 8 o superior</li>
+        <li>JDK 17 o superior (JDK 21, recomendado)</li>
         <li>Maven</li>
-        <li>MySQL o cualquier base de datos compatible con JPA</li>
+        <li>MySQL</li>
     </ul>
     <h3>Clonar el repositorio</h3>
-    <pre><code>git clone https://github.com/JonathanRodriguezCruz/NutriMarketAPI.git
-cd NutriMarketAPI
-</code></pre>
+    <pre><code>git clone https://github.com/JonathanRodriguezCruz/NutriMarketAPI.git</code></pre>
+    <h3>Navegar al directorio del proyecto</h3>
+    <pre><code>cd NutriMarketAPI</code></pre>
     <h3>Configurar la base de datos</h3>
     <ol>
-        <li>Crea una base de datos en MySQL (o en tu base de datos preferida).</li>
-        <li>Actualiza el archivo <code>src/main/resources/application.properties</code> con la configuración de tu base de datos:</li>
+        <li>Crea una base de datos en MySQL.</li>
+        <li>Actualiza el archivo <code>src/main/resources/application.yml</code> con la configuración de tu base de datos:</li>
     </ol>
-    <pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/nutrimarket
-spring.datasource.username=tu_usuario
-spring.datasource.password=tu_contraseña
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
+    <pre><code>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/NutriMarket
+    username: root
+    password: 1234
+  jpa:
+    database-platform: com.mysql.cj.jdbc.Driver
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+    mvc:
+      throw-exception-if-no-handler-found: true
+      async:
+        request-timeout: 3600000
+    thymeleaf:
+      prefix: classpath:/templates/
+      suffix: .html
+      enabled: true
+server:
+  port: 8080
+  error:
+    path: /user/error
+    whitelabel:
+      enabled: false
+springdoc:
+  swagger-ui:
+    operationsSorter: method
 </code></pre>
     <h3>Compilar y ejecutar la aplicación</h3>
     <ol>
