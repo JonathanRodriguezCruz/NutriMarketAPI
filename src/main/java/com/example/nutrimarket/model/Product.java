@@ -31,4 +31,6 @@ public class Product {
     private int productStock;
     @Column(name = "product_price")
     private double productPrice;
+    @Column(name = "product_photo_url")
+    private String productPhotoUrl;
 }
