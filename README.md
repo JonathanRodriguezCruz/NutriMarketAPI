@@ -115,6 +115,3 @@ spring.jpa.show-sql=true
         <li>Sube tus cambios a tu fork (<code>git push origin nueva-funcionalidad</code>).</li>
         <li>Crea un nuevo Pull Request.</li>
     </ol>
-    <h2>Licencia</h2>
-    <p>Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.</p>
-
