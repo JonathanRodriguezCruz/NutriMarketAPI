@@ -9,4 +9,5 @@ public class ProductDTO {
     private String productDescription;
     private int productStock;
     private double productPrice;
+    private String productPhotoUrl;
 }

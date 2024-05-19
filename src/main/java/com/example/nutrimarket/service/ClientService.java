@@ -89,10 +89,15 @@ public class ClientService {
                 client.setUserName(clientDTO.getUserName());
                 client.setUserAddress(clientDTO.getUserAddress());
 
+                if (clientDTO.getUserRol().equals("") || clientDTO.getUserRol().equals(null)) {
+                    client.setUserRol("cliente");
+                } else {
+                    client.setUserRol(clientDTO.getUserRol());
+                }
                 return clientRepository.save(client);
             }
         }
-        return null;
+        return client;
     }
 
     /**

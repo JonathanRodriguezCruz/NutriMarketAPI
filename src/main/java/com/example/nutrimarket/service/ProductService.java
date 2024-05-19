@@ -86,6 +86,7 @@ public class ProductService {
             product.setProductDescription(productDTO.getProductDescription());
             product.setProductStock(productDTO.getProductStock());
             product.setProductPrice(productDTO.getProductPrice());
+            product.setProductPhotoUrl(productDTO.getProductPhotoUrl());
         }
 
         return productRepository.save(product);
@@ -108,6 +109,7 @@ public class ProductService {
             product.setProductDescription(productDTO.getProductDescription());
             product.setProductStock(productDTO.getProductStock());
             product.setProductPrice(productDTO.getProductPrice());
+            product.setProductPhotoUrl(productDTO.getProductPhotoUrl());
         }
 
         return productRepository.save(product);

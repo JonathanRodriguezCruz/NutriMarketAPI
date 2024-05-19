@@ -55,11 +55,6 @@ public class ClientController {
         return ResponseEntity.created(null).body(clientService.createClient(clientDTO));
     }
 
-    @PostMapping("/signup")
-    public ResponseEntity<Client> signupUser(@RequestBody ClientDTO clientDTO) {
-        return ResponseEntity.created(null).body(clientService.createClient(clientDTO));
-    }
-
     @PutMapping("/update/{id}")
     public Client updateClient(@PathVariable int id, @RequestBody ClientDTO clientDTO) {
         return clientService.updateClient(id,clientDTO);
