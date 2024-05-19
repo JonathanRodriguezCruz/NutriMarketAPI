@@ -10,7 +10,7 @@ header, nav, main, footer {
 }
 
 header {
-    background-color: #f4f4f4;
+    background-color: #FFD166;
     padding: 20px 0;
     text-align: center;
 }
@@ -34,7 +34,8 @@ section {
 }
 
 footer {
+    background-color: #FFD166;
     text-align: center;
     font-size: 0.8em;
-    color: #777;
+    color: #444;
 }
