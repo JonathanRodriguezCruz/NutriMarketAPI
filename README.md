@@ -46,7 +46,7 @@
     </ul>
     <h3>Clonar el repositorio</h3>
     <pre><code>git clone https://github.com/JonathanRodriguezCruz/NutriMarketAPI.git</code></pre>
-    <h3>Navegar al directorio del proyecto</h3>
+    <h4>Navegar al directorio del proyecto</h4>
     <pre><code>cd NutriMarketAPI</code></pre>
     <h3>Configurar la base de datos</h3>
     <ol>
