@@ -11,25 +11,34 @@
     <h2>Funcionalidades</h2>
     <p>La API proporciona las siguientes funcionalidades:</p>
     <ul>
-        <li><strong>Clientes:</strong>
+        <li><b>Usuarios:</b>
             <ul>
-                <li>Crear, buscar, actualizar y eliminar a clientes.</li>
-                <li>Autenticación de clientes.</li>
+                <li>Administradores:
+                    <ul>
+                        <li>Crear, buscar, actualizar y eliminar todas las entidades.</li>
+                    </ul>
+                </li>
+                <li>Clientes:
+                    <ul>
+                        <li>Crear cuenta, buscar productos, editar perfil y eliminar cuenta.</li>
+                        <li>Autenticación de cliente.</li>
+                    </ul>
+                </li>
             </ul>
         </li>
-        <li><strong>Productos:</strong>
+        <li><b>Productos:</b>
             <ul>
                 <li>Consultar y gestionar productos disponibles.</li>
                 <li>Crear, buscar, actualizar y eliminar productos.</li>
             </ul>
         </li>
-        <li><strong>Carritos Personales:</strong>
+        <li><b>Carritos Personales:</b>
             <ul>
                 <li>Crear y gestionar carritos de compra para los clientes.</li>
                 <li>Añadir y eliminar productos en el carrito.</li>
             </ul>
         </li>
-        <li><strong>Contenido de los Carritos:</strong>
+        <li><b>Contenido de los Carritos:</b>
             <ul>
                 <li>Consultar el contenido del carrito de un cliente.</li>
                 <li>Actualizar la cantidad de productos en el carrito.</li>
