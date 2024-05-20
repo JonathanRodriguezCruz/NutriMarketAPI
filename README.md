@@ -1,5 +1,7 @@
 <h1>NutriMarketAPI</h1>
     <p>NutriMarketAPI es una API REST desarrollada en Java utilizando Spring Boot y JPA. Esta API sirve como conector entre la base de datos y una aplicación web de la empresa <b><i>NutriMarket</i></b>, permitiendo gestionar clientes, productos, carritos personales y el contenido de los carritos.</p>
+    <h2>Uso de la API</h2>
+    <p>Si estás interesado en ver cómo se utiliza esta API en un proyecto real, puedes consultar el repositorio <a href="https://github.com/lucas-the-wise-dreams/nutriMarket">NutriMarket</a> donde se implementa la API.</p>
     <h2>✔️Tecnologías Utilizadas</h2>
     <ul>
         <li>Java</li>
@@ -117,8 +119,6 @@ springdoc:
     <h2>Endpoints</h2>
     <p>Para saber los <i>Endpoints</i> que se puede usar, puedes acceder a la documentacion de la API en la siguiente URL:</p>
     <p><a href="http://localhost:8080/swagger-ui/indext.html">http://localhost:8080/swagger-ui/indext.html</a></p>
-    <h2>Uso de la API</h2>
-    <p>Si estás interesado en ver cómo se utiliza esta API en un proyecto real, puedes consultar el repositorio <a href="https://github.com/lucas-the-wise-dreams/nutriMarket">NutriMarket</a> donde se implementa la API.</p>
     <h2>Contribuir</h2>
     <p>Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:</p>
     <ol>
