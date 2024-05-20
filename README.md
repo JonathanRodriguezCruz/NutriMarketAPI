@@ -1,5 +1,5 @@
 <h1>NutriMarketAPI</h1>
-    <p>NutriMarketAPI es una API REST desarrollada en Java utilizando Spring Boot y JPA. Esta API sirve como conector entre la base de datos y una aplicación web, permitiendo gestionar clientes, productos, carritos personales y el contenido de los carritos.</p>
+    <p>NutriMarketAPI es una API REST desarrollada en Java utilizando Spring Boot y JPA. Esta API sirve como conector entre la base de datos y una aplicación web de la empresa <b><i>NutriMarket</i></b>, permitiendo gestionar clientes, productos, carritos personales y el contenido de los carritos.</p>
     <h2>✔️Tecnologías Utilizadas</h2>
     <ul>
         <li>Java</li>
