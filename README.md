@@ -117,6 +117,8 @@ springdoc:
     <h2>Endpoints</h2>
     <p>Para saber los <i>Endpoints</i> que se puede usar, puedes acceder a la documentacion de la API en la siguiente URL:</p>
     <p><a href="http://localhost:8080/swagger-ui/indext.html">http://localhost:8080/swagger-ui/indext.html</a></p>
+    <h2>Uso de la API</h2>
+    <p>Si estás interesado en ver cómo se utiliza esta API en un proyecto real, puedes consultar el repositorio [Nombre del Proyecto](enlace al repositorio) donde se implementa la API.</p>
     <h2>Contribuir</h2>
     <p>Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:</p>
     <ol>
