@@ -106,7 +106,7 @@ springdoc:
     <p>Una vez que la aplicación se esté ejecutando, puedes acceder a la API en la siguiente URL:</p>
     <p><a href="http://localhost:8080">http://localhost:8080</a></p>
     <h2>Endpoints</h2>
-    <p>Para saber los Endpoints que se puede usar, puedes acceder a la documentacion de la API en la siguiente URL:</p>
+    <p>Para saber los <i>Endpoints</i> que se puede usar, puedes acceder a la documentacion de la API en la siguiente URL:</p>
     <p><a href="http://localhost:8080/swagger-ui/indext.html">http://localhost:8080/swagger-ui/indext.html</a></p>
     <h2>Contribuir</h2>
     <p>Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:</p>
