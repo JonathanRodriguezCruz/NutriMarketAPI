@@ -106,38 +106,8 @@ springdoc:
     <p>Una vez que la aplicación se esté ejecutando, puedes acceder a la API en la siguiente URL:</p>
     <p><a href="http://localhost:8080">http://localhost:8080</a></p>
     <h2>Endpoints</h2>
-    <p>Aquí hay una lista básica de algunos de los endpoints proporcionados por la API:</p>
-    <h3>Clientes</h3>
-    <ul>
-        <li><code>GET /api/customers</code> - Obtener todos los clientes.</li>
-        <li><code>GET /api/customers/{id}</code> - Obtener un cliente por ID.</li>
-        <li><code>POST /api/customers</code> - Crear un nuevo cliente.</li>
-        <li><code>PUT /api/customers/{id}</code> - Actualizar un cliente existente.</li>
-        <li><code>DELETE /api/customers/{id}</code> - Eliminar un cliente.</li>
-    </ul>
-    <h3>Productos</h3>
-    <ul>
-        <li><code>GET /api/products</code> - Obtener todos los productos.</li>
-        <li><code>GET /api/products/{id}</code> - Obtener un producto por ID.</li>
-        <li><code>POST /api/products</code> - Crear un nuevo producto.</li>
-        <li><code>PUT /api/products/{id}</code> - Actualizar un producto existente.</li>
-        <li><code>DELETE /api/products/{id}</code> - Eliminar un producto.</li>
-    </ul>
-    <h3>Carritos</h3>
-    <ul>
-        <li><code>GET /api/carts</code> - Obtener todos los carritos.</li>
-        <li><code>GET /api/carts/{id}</code> - Obtener un carrito por ID.</li>
-        <li><code>POST /api/carts</code> - Crear un nuevo carrito.</li>
-        <li><code>PUT /api/carts/{id}</code> - Actualizar un carrito existente.</li>
-        <li><code>DELETE /api/carts/{id}</code> - Eliminar un carrito.</li>
-    </ul>
-    <h3>Contenido de los Carritos</h3>
-    <ul>
-        <li><code>GET /api/carts/{id}/items</code> - Obtener el contenido del carrito.</li>
-        <li><code>POST /api/carts/{id}/items</code> - Añadir un producto al carrito.</li>
-        <li><code>PUT /api/carts/{id}/items/{itemId}</code> - Actualizar la cantidad de un producto en el carrito.</li>
-        <li><code>DELETE /api/carts/{id}/items/{itemId}</code> - Eliminar un producto del carrito.</li>
-    </ul>
+    <p>Para saber los Endpoints que se puede usar, puedes acceder a la documentacion de la API en la siguiente URL:</p>
+    <p><a href="http://localhost:8080/swagger-ui/indext.html">http://localhost:8080/swagger-ui/indext.html</a></p>
     <h2>Contribuir</h2>
     <p>Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:</p>
     <ol>
